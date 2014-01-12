@@ -7,8 +7,12 @@
 //
 
 #import "ASHViewController.h"
+#import "ASHPerson.h"
+#import <RXCollections/RXCollection.h>
 
 @interface ASHViewController ()
+
+@property (nonatomic, strong) NSArray *personsArray;
 
 @end
 
@@ -17,13 +21,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.personsArray = @[[[ASHPerson alloc] initWithName:@"Alice" favouriteColor:[UIColor redColor] age:25],
+                          [[ASHPerson alloc] initWithName:@"Bob" favouriteColor:[UIColor blueColor] age:40],
+                          [[ASHPerson alloc] initWithName:@"Carol" favouriteColor:[UIColor purpleColor] age:18]];
+    
+    [self nonFunctionalMethod];
+//    [self functionalMethod];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+
+
+
+
+
+-(void)nonFunctionalMethod {
+    /*
+     Note: I'm cheating here a bit because there is a non-RXCollections way to gather names using valueForKey:
+     But that's a functional way to do it, so ¯\_(ツ)_/¯
+     */
+    
+    
 }
+
+
+
+
+
+
+
+-(void)functionalMethod {
+    
+}
+
+
+
+
+
+
+
 
 @end
